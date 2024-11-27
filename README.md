@@ -46,6 +46,7 @@ Folder and File Descriptions:
 4. tsconfig.json: TypeScript configuration file for compiling TypeScript files.
 5. package.json: Contains project dependencies and scripts for test execution.
 6. test-results/: Directory where Playwright will generate HTML test reports.
+7. data/: This folder contains test data.
 
 
 Assumptions and Limitations:

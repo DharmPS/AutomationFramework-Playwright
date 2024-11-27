@@ -3,12 +3,10 @@ import { Page, test } from '@playwright/test';
 export default class InventoryPage {
   constructor(private page: Page) {}
 
-  // Selectors
+  //locators
   private productSortDropdown = '[data-test="product-sort-container"]';
-  private productList = '.inventory_item';
   private addToCartButtons = this.page.getByRole('button', { name: 'Add to cart' });
   private cartButton = '.shopping_cart_link';
-  private cartQuantityInput = '.cart_quantity_input';
   private checkoutButton = this.page.getByRole('button', { name: 'Checkout' });
   private firstNameInput = '[data-test="firstName"]';
   private lastNameInput = '[data-test="lastName"]';

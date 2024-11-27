@@ -10,14 +10,7 @@ export default defineConfig({
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'], headless: false },
-    },
-    {
-      name: 'api',
-      use: {
-        baseURL: 'https://dummyjson.com/', // API URL
-      } 
-    }
-    
+    },  
   ],
   reporter: [['html', { outputFolder: 'test-results' }]],
   use: {

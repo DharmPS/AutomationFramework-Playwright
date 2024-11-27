@@ -1,0 +1,6 @@
+{
+    "loginErrorMsg": "Epic sadface: Username and password do not match any user in this service",
+    "inventoryURL": "/inventory.html",
+    "endPoint": "https://dummyjson.com/"
+  }
+  

@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { Utils } from '../utils/test-utils';
+import testData from '../data/testData.json';
 
 // Test 1: Valid Login - Correct Username & password
 test('should login successfully with valid credentials', async ({ page }) => {
@@ -14,8 +15,8 @@ test('should login successfully with valid credentials', async ({ page }) => {
     await loginPage.validLogin();
   });
 
-  await test.step('Verify that the URL is correct after login', async () => {
-    await expect(page).toHaveURL('/inventory.html');
+  await test.step(`Verify that the URL ${testData.inventoryURL} is correct after login`, async () => {
+    await expect(page).toHaveURL(testData.inventoryURL);
   });
 
   await test.step('Verify login success', async () => {
@@ -41,7 +42,7 @@ test('Invalid login with incorrect username', async ({ page }) => {
 
   await test.step('Verify the error message text', async () => {
     const errorMessage = await loginPage.getErrorMessage();
-    expect(errorMessage).toBe('Epic sadface: Username and password do not match any user in this service');
+    expect(errorMessage).toBe(testData.loginErrorMsg);
   });
 });
 
@@ -63,7 +64,7 @@ test('Invalid login with incorrect password', async ({ page }) => {
 
   await test.step('Verify the error message text', async () => {
     const errorMessage = await loginPage.getErrorMessage();
-    expect(errorMessage).toBe('Epic sadface: Username and password do not match any user in this service');
+    expect(errorMessage).toBe(testData.loginErrorMsg);
   });
 });
 

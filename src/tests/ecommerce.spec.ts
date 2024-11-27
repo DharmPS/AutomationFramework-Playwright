@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import InventoryPage from '../pages/inventoryPage';  // Adjust the path as needed
+import InventoryPage from '../pages/InventoryPage';
 import { LoginPage } from '../pages/LoginPage';
 import { Utils } from '../utils/test-utils';
 
@@ -10,7 +10,6 @@ test.describe('E-commerce Functionality Tests', () => {
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     inventoryPage = new InventoryPage(page);
-
     await test.step('Navigate to the homepage', async () => {
       await Utils.navigateTo(page);
       await loginPage.validLogin();
@@ -87,7 +86,7 @@ test.describe('E-commerce Functionality Tests', () => {
     });
   });
 
-  // Test 6: Update cart quantities - Note: This one is not possible as QTY input box is NOT editable. 
+  // Test 6: Update cart quantities - Note: This one is not possible as "QTY" input box is NOT editable. 
   test('Update cart quantities', async ({ page }) => {
     await test.step('Add item to the cart', async () => {
       await inventoryPage.addItemToCart(1); // Add first item
