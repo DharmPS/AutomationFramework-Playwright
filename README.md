@@ -83,3 +83,5 @@ Advanced Features:
 2. Configured cross-browser testing for Chromium and Firefox.
 3. Set up screenshot capture on failure for better debugging.
 4. This approach was designed to ensure that the automation framework is modular, maintainable, and scalable for future additions or modifications.
+
+Video link - https://www.youtube.com/watch?v=kStVx3GYrXM
